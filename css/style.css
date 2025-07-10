@@ -991,8 +991,8 @@ footer {
 /* BOTÃO FECHAR - Agora posicionado em relação à imagem */
 .image-popup-close {
     position: absolute;
-    top: -20px; /* Posiciona acima da imagem */
-    right: -20px; /* Posiciona à direita da imagem */
+    top: -40px; /* 20px mais para cima */
+    right: -10px; /* 10px mais para a esquerda */
     background: rgba(0, 0, 0, 0.8);
     color: white;
     border: none;
