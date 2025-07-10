@@ -674,9 +674,6 @@ class ImagePopup {
         this.popupImage.src = imageSrc;
         this.popupImage.alt = imageAlt || 'Visualização da imagem';
         
-        // POSICIONAMENTO: Move o botão fechar para dentro da imagem
-        this.popupImage.appendChild(this.closeImagePopup);
-        
         // EXIBIÇÃO: Mostra o pop-up com animação
         this.imagePopup.classList.add('active');
         
