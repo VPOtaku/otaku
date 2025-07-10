@@ -639,12 +639,28 @@ class ImagePopup {
             
             // CONFIGURAÇÃO: Adiciona event listener para cada imagem
             galleryImages.forEach((img, index) => {
-                img.addEventListener('click', (e) => {
+                // REMOVE listeners existentes para evitar duplicação
+                img.removeEventListener('click', this.handleImageClick);
+                img.removeEventListener('touchend', this.handleImageTouch);
+                
+                // CRIA funções bound para poder remover depois
+                const clickHandler = (e) => {
                     e.preventDefault();
                     e.stopPropagation();
                     console.log(`Imagem ${index + 1} clicada - abrindo pop-up`);
                     this.openPopup(img.src, img.alt);
-                });
+                };
+                
+                const touchHandler = (e) => {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    console.log(`Imagem ${index + 1} tocada - abrindo pop-up`);
+                    this.openPopup(img.src, img.alt);
+                };
+                
+                // ADICIONA os event listeners
+                img.addEventListener('click', clickHandler);
+                img.addEventListener('touchend', touchHandler);
                 
                 // ACESSIBILIDADE: Permite abrir com Enter/Space
                 img.addEventListener('keydown', (e) => {
@@ -659,7 +675,7 @@ class ImagePopup {
                 img.setAttribute('tabindex', '0');
                 img.style.cursor = 'pointer';
             });
-        }, 1000); // Aguarda 1 segundo para as imagens serem criadas
+        }, 500); // Reduzido para 500ms para resposta mais rápida
     }
     
     /**
