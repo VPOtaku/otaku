@@ -76,10 +76,12 @@
     <!-- PARA ADAPTAR: Manter esta estrutura em todas as páginas de gallery -->
     <div class="image-popup-overlay" id="imagePopup">
         <div class="image-popup-content">
-            <!-- BOTÃO FECHAR - Posicionado no canto superior direito -->
-            <button class="image-popup-close" id="closeImagePopup">×</button>
             <!-- IMAGEM EM TAMANHO COMPLETO - Proporção 1:1.4 (retrato) -->
-            <img class="image-popup-img" id="popupImage" src="" alt="Visualização da imagem">
+            <div class="image-container">
+                <img class="image-popup-img" id="popupImage" src="" alt="Visualização da imagem">
+                <!-- BOTÃO FECHAR - Posicionado no canto superior direito DA IMAGEM -->
+                <button class="image-popup-close" id="closeImagePopup">×</button>
+            </div>
         </div>
     </div>
 
