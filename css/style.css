@@ -985,9 +985,9 @@ footer {
 /* BOTÃO FECHAR - Canto superior direito bem definido */
 .image-popup-close {
     position: absolute;
-    top: 20px;
-    right: 20px;
-    transform: none;
+    top: 0;
+    right: 0;
+    transform: translate(50%, -50%);
     background: rgba(0, 0, 0, 0.8);
     color: white;
     border: none;
@@ -997,7 +997,7 @@ footer {
     font-size: 1.5rem;
     font-weight: bold;
     cursor: pointer;
-    z-index: 3001;
+    z-index: 3002;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -1023,15 +1023,16 @@ footer {
 
 /* ESTADO ATIVO DO BOTÃO FECHAR */
 .image-popup-close:active {
-    transform: scale(0.95);
+    transform: translate(50%, -50%) scale(0.95);
     box-shadow: 0 2px 8px rgba(255, 45, 84, 0.3);
 }
 
 /* RESPONSIVIDADE MOBILE PARA O POP-UP */
 @media (max-width: 768px) {
     .image-popup-close {
-        top: 15px;
-        right: 15px;
+        top: 0;
+        right: 0;
+        transform: translate(50%, -50%);
         width: 40px;
         height: 40px;
         font-size: 1.4rem;
@@ -1043,12 +1044,12 @@ footer {
     }
     
     .image-popup-close:hover {
-        transform: scale(1.05);
+        transform: translate(50%, -50%) scale(1.05);
         border-color: rgba(255, 255, 255, 0.5);
     }
     
     .image-popup-close:active {
-        transform: scale(0.98);
+        transform: translate(50%, -50%) scale(0.98);
     }
     
     /* AJUSTE DA IMAGEM PARA MOBILE - Mantém proporção 1:1.4 */
@@ -1061,8 +1062,9 @@ footer {
 
 @media (max-width: 480px) {
     .image-popup-close {
-        top: 10px;
-        right: 10px;
+        top: 0;
+        right: 0;
+        transform: translate(50%, -50%);
         width: 40px;
         height: 40px;
         font-size: 1.3rem;
@@ -1074,12 +1076,12 @@ footer {
     }
     
     .image-popup-close:hover {
-        transform: scale(1.03);
+        transform: translate(50%, -50%) scale(1.03);
         border-color: rgba(255, 255, 255, 0.6);
     }
     
     .image-popup-close:active {
-        transform: scale(0.97);
+        transform: translate(50%, -50%) scale(0.97);
     }
 }
 
